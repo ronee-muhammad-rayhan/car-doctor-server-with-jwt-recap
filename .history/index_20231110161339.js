@@ -113,7 +113,6 @@ async function run() {
         //   // $in: [30, 60, 70],
         //   // $nin: [30, 60, 70]
         // }
-        // db.InspirationalWomen.find({first_name: { $regex: /Harriet/i} })
         title: { $regex: filter.search, $options: "i" }
 
       }

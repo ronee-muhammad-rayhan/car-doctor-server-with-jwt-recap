@@ -102,20 +102,20 @@ async function run() {
       const max = parseInt(filter.max)
       console.log(filter);
       const query = {
-        // price: {
-        //   /**
-        //    * ---------------------------
-        //    * Operators
-        //    * ---------------------------
-        //   */
-        //   // $lte: 70, $gte: 30, $ne: 60
-        //   // $lte: max, $gte: parseInt(filter.min), $ne: 60
-        //   // $in: [30, 60, 70],
-        //   // $nin: [30, 60, 70]
-        // }
-        // db.InspirationalWomen.find({first_name: { $regex: /Harriet/i} })
-        title: { $regex: filter.search, $options: "i" }
+        price: {
+          /**
+           * ---------------------------
+           * Operators
+           * ---------------------------
+          */
+          // $lte: 70, $gte: 30, $ne: 60
+          // $lte: max, $gte: parseInt(filter.min), $ne: 60
+          // $in: [30, 60, 70],
+          // $nin: [30, 60, 70]
 
+          $regex: filter.search,
+          options: i
+        }
       }
       const options = {
         sort: {
