@@ -99,27 +99,10 @@ async function run() {
     // services related api
     app.get("/services", async (req, res) => {
       const filter = req.query;
-      const max = parseInt(filter.max)
       console.log(filter);
-      const query = {
-        price: {
-          /**
-           * ---------------------------
-           * Operators
-           * ---------------------------
-          */
-          // $lte: 70, $gte: 30, $ne: 60
-          // $lte: max, $gte: parseInt(filter.min), $ne: 60
-          $in: [30, 60, 70]
-          // $nin: [30, 60, 70]
-        }
-      }
-      const options = {
-        sort: {
-          price: filter.sort === 'asc' ? 1 : -1
-        }
-      }
-      const cursor = serviceCollection.find(query, options);
+      const query = {}
+      const options = {}
+      const cursor = serviceCollection.find();
       const result = await cursor.toArray();
       res.send(result);
     });

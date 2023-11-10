@@ -110,8 +110,8 @@ async function run() {
           */
           // $lte: 70, $gte: 30, $ne: 60
           // $lte: max, $gte: parseInt(filter.min), $ne: 60
-          $in: [30, 60, 70]
-          // $nin: [30, 60, 70]
+          // $in:[30, 60, 70]
+          $nin: [30, 60, 70]
         }
       }
       const options = {

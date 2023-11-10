@@ -103,15 +103,8 @@ async function run() {
       console.log(filter);
       const query = {
         price: {
-          /**
-           * ---------------------------
-           * Operators
-           * ---------------------------
-          */
           // $lte: 70, $gte: 30, $ne: 60
-          // $lte: max, $gte: parseInt(filter.min), $ne: 60
-          $in: [30, 60, 70]
-          // $nin: [30, 60, 70]
+          $lte: max, $gte: parseInt(filter.min), $ne: 60
         }
       }
       const options = {
